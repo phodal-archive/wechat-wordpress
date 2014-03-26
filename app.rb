@@ -1,10 +1,12 @@
-require 'sinatra'
 require 'wei-backend'
+require 'rubygems'
+require './blog_helper'
 
-token "mytoken"
+token "xuntaba"
 
 on_text do
-    "你发送了如下内容: #{params[:Content]}!!"
+    blog = BlogHelper.new
+    blog.getdata(params[:Content])
 end
 
 on_subscribe do
