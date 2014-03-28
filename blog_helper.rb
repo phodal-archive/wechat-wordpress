@@ -3,11 +3,6 @@ require 'json'
 require 'net/http'
 
 class BlogHelper
-
-  def initialize()
-
-  end
-
   def getdata(query)
     result = []
     response = Net::HTTP.get_response("localhost","/?wpapi=search&dev=1&keyword="+query)
@@ -15,7 +10,7 @@ class BlogHelper
     posts.each do |post|
       result << {
         :title => post['title'],
-        :description => post['excerpt'],
+        :description => /&hellip;/.match(post['excerpt']).pre_match,
         :picture_url => post['author'][0]['gravatar'],
         :url => post['url']
       }
@@ -23,6 +18,3 @@ class BlogHelper
     result
   end
 end
-
-blog = BlogHelper.new
-blog.getdata('title')

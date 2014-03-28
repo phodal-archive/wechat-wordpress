@@ -25,4 +25,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nokogiri
   wei-backend
