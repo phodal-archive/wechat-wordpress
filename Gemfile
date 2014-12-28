@@ -1,11 +1,4 @@
 source 'http://rubygems.org'
 
-gem 'haml'
-gem 'sinatra'
+gem 'wei-backend'
 gem 'nokogiri'
-gem 'capistrano'
-gem 'httparty'
-gem 'thin'
-gem 'hash_validator'
-gem 'wei-backend', '0.1.4'
-gem 'shotgun'
